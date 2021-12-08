@@ -1,0 +1,69 @@
+{
+  "name": "@mattrglobal/vc-cwt-verifier",
+  "version": "1.0.3",
+  "description": "vc-cwt-verifier",
+  "main": "lib/index.js",
+  "author": "MATTR",
+  "license": "SEE LICENCE IN https://learn.mattr.global/docs/terms/sdk-licence-verifier-single-format-cwt-cose/",
+  "private": false,
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "@mattrglobal/cose": "1.0.1",
+    "@stablelib/base64": "1.0.1",
+    "@stablelib/sha256": "1.0.1",
+    "axios": "0.23.0",
+    "date-fns": "2.25.0",
+    "did-resolver": "3.1.2",
+    "elliptic": "6.5.4",
+    "lru-cache": "6.0.0",
+    "neverthrow": "4.2.2",
+    "zod": "3.10.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "12.0.1",
+    "@commitlint/config-conventional": "12.0.1",
+    "@stablelib/hex": "1.0.1",
+    "@stablelib/random": "1.0.1",
+    "@types/elliptic": "6.4.12",
+    "@types/jest": "26.0.23",
+    "@types/lru-cache": "5.1.1",
+    "@typescript-eslint/eslint-plugin": "4.20.0",
+    "@typescript-eslint/parser": "4.20.0",
+    "conventional-changelog": "3.1.24",
+    "conventional-changelog-cli": "2.1.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.23.0",
+    "eslint-plugin-functional": "3.2.1",
+    "eslint-plugin-header": "3.1.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-tsdoc": "0.2.14",
+    "husky": "7.0.1",
+    "jest": "27.0.4",
+    "mockdate": "3.0.5",
+    "nock": "13.1.4",
+    "prettier": "2.2.1",
+    "pretty-quick": "1.11.1",
+    "ts-jest": "27.0.3",
+    "typescript": "4.2.3"
+  },
+  "scripts": {
+    "build": "tsc --pretty",
+    "format": "prettier --write '**/*.{js,ts,md,json,yml}'",
+    "lint": "eslint . --ext .ts --color --format=table && prettier --check '**/*.{js,ts,md,json,yml}'",
+    "lint:fix": "eslint . --ext .ts --color --format=table --fix && yarn format",
+    "test": "jest"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

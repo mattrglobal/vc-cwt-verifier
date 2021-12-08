@@ -1,0 +1,69 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "jest.config.js",
+  "apps": {
+    "ios": {
+      "type": "ios.app",
+      "build": "xcodebuild -workspace ios/example.xcworkspace -configuration release -scheme example -sdk iphonesimulator -derivedDataPath ios/build",
+      "binaryPath": "./ios/build/Build/Products/Release-iphonesimulator/example.app"
+    },
+    "android": {
+      "type": "android.apk",
+      "build": "cd android && ./gradlew assembleReleaseE2E assembleAndroidTest -DtestBuildType=releaseE2E && cd ..",
+      "binaryPath": "android/app/build/outputs/apk/releaseE2E/app-releaseE2E.apk"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 11"
+      }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Nexus_5X_API_29"
+      }
+    }
+  },
+  "artifacts": {
+    "rootDir": ".detox-artifacts",
+    "plugins": {
+      "instruments": { "enabled": false },
+      "log": { "enabled": true },
+      "uiHierarchy": "enabled",
+      "screenshot": {
+        "shouldTakeAutomaticSnapshots": true,
+        "keepOnlyFailedTestsArtifacts": true,
+        "takeWhen": {
+          "testStart": false,
+          "testDone": true
+        }
+      },
+      "video": {
+        "android": {
+          "bitRate": 4000000
+        },
+        "simulator": {
+          "codec": "hevc"
+        }
+      }
+    }
+  },
+  "configurations": {
+    "ios": {
+      "device": "simulator",
+      "app": "ios"
+    },
+    "android": {
+      "device": "emulator",
+      "app": "android"
+    }
+  },
+  "behavior": {
+    "init": {
+      "exposeGlobals": false
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./lib",
+    "jsx": "react-native",
+    "lib": ["es6"],
+    "types": ["jest"],
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js", "lib"],
+  "include": ["."]
+}

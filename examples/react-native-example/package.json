@@ -1,0 +1,45 @@
+{
+  "name": "react-native-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "check-types": "tsc --pretty",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "start:mockServer": "ts-node ./__tests__/testServer.ts",
+    "detox:setup": "detox clean-framework-cache && detox build-framework-cache",
+    "detox:build:android": "detox build --configuration=android",
+    "detox:test:android": "detox test --configuration=android --record-videos failing",
+    "detox:build:ios": "detox build --configuration=ios",
+    "detox:test:ios": "detox test --configuration=ios --record-videos failing",
+    "format": "prettier --write '**/*.{js,ts,tsx,md,json,yml}'"
+  },
+  "dependencies": {
+    "@mattrglobal/vc-cwt-verifier": "file:../../",
+    "@stablelib/base64": "1.0.1",
+    "neverthrow": "4.2.2",
+    "react": "16.13.1",
+    "react-native": "0.63.4"
+  },
+  "resolutions": {
+    "@mattrglobal/vc-cwt-verifier": "file:../../"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.4",
+    "@babel/runtime": "7.8.4",
+    "@types/detox": "17.14.0",
+    "@types/express": "4.17.12",
+    "@types/jest": "26.0.23",
+    "@types/react-native": "0.63.4",
+    "@types/react-test-renderer": "17.0.1",
+    "babel-jest": "26.6.3",
+    "detox": "18.15.0",
+    "jest": "26.6.3",
+    "jest-circus": "26.6.3",
+    "metro-react-native-babel-preset": "0.64.0",
+    "react-test-renderer": "16.9.0",
+    "ts-node": "10.0.0",
+    "typescript": "4.2.3"
+  }
+}
